@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Online Library Management System</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <aside class="sidebar">
+ <h2>📚 My Library</h2>
+ <p class="subtitle">Management System</p>
+ <nav>
+ <button class="nav-btn active" data-page="dashboard">🏠
+Dashboard</button>
+ <button class="nav-btn" data-page="books">📖 Manage 
+Books</button>
+ <button class="nav-btn" data-page="issue">📤 Issue Book</button>
+ <button class="nav-btn" data-page="records">📋 Records</button>
+ </nav>
+ <p class="sidebar-footer">Library Mini Project</p>
+ </aside>
+ <main class="main-content">
+ <header>
+ <div>
+ <h1 id="page-title">Dashboard</h1>
+ <p>Welcome to Online Library Management System</p>
+ </div>
+ <div class="admin">👤 Admin</div>
+ </header>
+KMC COLLEGE KHOPOLI DEPARTMENT OF COMPUTER SCIENCE PAGE NO.[ ]
+ <!-- DASHBOARD -->
+ <section id="dashboard" class="page active">
+ <div class="stats">
+ <div class="stat-card">
+ <h3>Total Books</h3>
+ <h2 id="totalBooks">0</h2>
+ </div>
+ <div class="stat-card">
+ <h3>Available Books</h3>
+ <h2 id="availableBooks">0</h2>
+ </div>
+ <div class="stat-card">
+ <h3>Issued Books</h3>
+ <h2 id="issuedBooks">0</h2>
+ </div>
+ <div class="stat-card">
+ <h3>Total Students</h3>
+ <h2 id="totalStudents">0</h2>
+ </div>
+ </div>
+ <div class="panel">
+ <h2>Welcome to Library Management</h2>
+ <p>
+ Manage books, issue books to students,
+ maintain records and track book returns
+ easily using this system.
+ </p>
+ </div>
+ <div class="panel">
+ <h2>Recently Issued Books</h2>
+ <div class="table-wrapper">
+ <table>
+ <thead>
+ <tr>
+KMC COLLEGE KHOPOLI DEPARTMENT OF COMPUTER SCIENCE PAGE NO.[ ]
+ <th>Student</th>
+ <th>Book</th>
+ <th>Issue Date</th>
+ <th>Due Date</th>
+ </tr>
+ </thead>
+ <tbody id="recentTable"></tbody>
+ </table>
+ </div>
+ </div>
+ </section>
+ <!-- BOOK MANAGEMENT -->
+ <section id="books" class="page">
+ <div class="panel">
+ <h2>Add / Update Book</h2>
+ <form id="bookForm">
+ <input type="hidden" id="editId">
+ <div class="form-grid">
+ <input type="text" id="isbn"
+ placeholder="ISBN Number" required>
+ <input type="text" id="title"
+ placeholder="Book Title" required>
+ <input type="text" id="author"
+ placeholder="Author Name" required>
+ <input type="text" id="category"
+ placeholder="Category" required>
+ </div>
+ <button type="submit" class="primary-btn">
+ Save Book
+ </button>
+KMC COLLEGE KHOPOLI DEPARTMENT OF COMPUTER SCIENCE PAGE NO.[ ]
+ <button type="button" id="cancelEdit"
+ class="secondary-btn hidden">
+ Cancel Edit
+ </button>
+ </form>
+ </div>
+ <div class="panel">
+ <h2>All Books</h2>
+ <input type="text" id="searchBook"
+ placeholder="Search by title, author or ISBN...">
+ <div class="table-wrapper">
+ <table>
+ <thead>
+ <tr>
+ <th>ISBN</th>
+ <th>Title</th>
+ <th>Author</th>
+ <th>Category</th>
+ <th>Status</th>
+ <th>Actions</th>
+ </tr>
+ </thead>
+ <tbody id="bookTable"></tbody>
+ </table>
+ </div>
+ </div>
+ </section>
+ <!-- ISSUE BOOK -->
+ <section id="issue" class="page">
+ <div class="panel">
+ <h2>Issue Book to Student</h2>
+ <form id="issueForm">
+KMC COLLEGE KHOPOLI DEPARTMENT OF COMPUTER SCIENCE PAGE NO.[ ]
+ <label>Student Name</label>
+ <input type="text" id="studentName"
+ placeholder="Enter student name" required>
+ <label>Student ID</label>
+ <input type="text" id="studentId"
+ placeholder="Enter student ID" required>
+ <label>Select Book</label>
+ <select id="bookSelect" required>
+ <option value="">Select a book</option>
+ </select>
+ <label>Issue Date</label>
+ <input type="date" id="issueDate" required>
+ <label>Return Due Date</label>
+ <input type="date" id="dueDate" required>
+ <button type="submit" class="primary-btn">
+ Issue Book
+ </button>
+ </form>
+ </div>
+ </section>
+ <!-- RECORDS -->
+ <section id="records" class="page">
+ <div class="panel">
+ <h2>Issue and Return Records</h2>
+ <input type="text" id="searchRecord"
+ placeholder="Search student, ID or book...">
+ <div class="table-wrapper">
+ <table>
+ <thead>
+KMC COLLEGE KHOPOLI DEPARTMENT OF COMPUTER SCIENCE PAGE NO.[ ]
+ <tr>
+ <th>Student</th>
+ <th>Student ID</th>
+ <th>Book</th>
+ <th>Issue Date</th>
+ <th>Due Date</th>
+ <th>Return Date</th>
+ <th>Fine</th>
+ <th>Status / Action</th>
+ </tr>
+ </thead>
+ <tbody id="recordTable"></tbody>
+ </table>
+ </div>
+ </div>
+ </section>
+ <footer>
+ © 2026 Online Library Management System | Mini Project
+ </footer>
+ </main>
+ <script src="script.js"></script>
+</body>
+</html>
